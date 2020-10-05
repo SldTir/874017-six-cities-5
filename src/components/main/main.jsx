@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Main = (props) => {
-  const {placesCount} = props;
+const Main = ({placesCount}) => {
   return (
     <div className="page page--gray page--main">
       <header className="header">
