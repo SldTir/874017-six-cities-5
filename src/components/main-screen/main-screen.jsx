@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Main = (props) => {
-  const {placesCount} = props;
+const MainScreen = ({placesCount}) => {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -264,8 +263,8 @@ const Main = (props) => {
   );
 };
 
-Main.propTypes = {
+MainScreen.propTypes = {
   placesCount: PropTypes.number.isRequired,
 };
 
-export default Main;
+export default MainScreen;
