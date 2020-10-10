@@ -7,7 +7,7 @@ import reviews from "./mocks/reviews";
 const Settings = {
   PLACES_COUNT: 163,
 };
-debugger;
+
 ReactDOM.render(
     <App
       placesCount={Settings.PLACES_COUNT}
