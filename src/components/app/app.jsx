@@ -6,13 +6,16 @@ import FavoritesScreen from "../favorites-screen/favorites-screen";
 import RoomScreen from "../room-screen/room-screen";
 import SignInScreen from "../sign-in-screen/sign-in-screen";
 
-const App = (props) => {
-  const {placesCount} = props;
+const App = ({placesCount, offers, revocationList}) => {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <MainScreen placesCount={placesCount}/>
+          <MainScreen
+            placesCount={placesCount}
+            offers={offers}
+            revocationList={revocationList}
+          />
         </Route>
         <Route exact path="/login">
           <SignInScreen />
@@ -25,12 +28,41 @@ const App = (props) => {
         </Route>
       </Switch>
     </BrowserRouter>
-
   );
 };
 
 App.propTypes = {
   placesCount: PropTypes.number.isRequired,
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    photos: PropTypes.arrayOf(PropTypes.string.isRequired),
+    header: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    premium: PropTypes.bool.isRequired,
+    type: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    bedroomsCount: PropTypes.number.isRequired,
+    maxNumberGuests: PropTypes.number.isRequired,
+    cost: PropTypes.number.isRequired,
+    welfareItem: PropTypes.arrayOf(PropTypes.string.isRequired),
+    informationAboutHost: PropTypes.shape({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      super: PropTypes.bool.isRequired,
+    }).isRequired
+  })).isRequired,
+  revocationList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    reviews: PropTypes.arrayOf(
+        PropTypes.shape({
+          avatar: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          rating: PropTypes.number.isRequired,
+          date: PropTypes.instanceOf(Date).isRequired,
+          reviewText: PropTypes.string.isRequired,
+        }).isRequired
+    ).isRequired
+  })).isRequired
 };
 
 export default App;
