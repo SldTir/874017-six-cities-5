@@ -1,11 +1,13 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
+import PlacesListScreen from "../places-list-screen/places-list-screen";
 
 class MainScreen extends PureComponent {
   constructor(props) {
     super(props);
   }
   render() {
+    const {placesCount, offers, revocationList} = this.props;
     return (
       <div className="page page--gray page--main">
         <header className="header">
@@ -73,7 +75,7 @@ class MainScreen extends PureComponent {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">{/*Place count*/} places to stay in Amsterdam</b>
+                <b className="places__found">{placesCount} places to stay in Amsterdam</b>
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex="0">
@@ -89,7 +91,7 @@ class MainScreen extends PureComponent {
                     <li className="places__option" tabIndex="0">Top rated first</li>
                   </ul>
                 </form>
-                {/* список карточек */}
+                <PlacesListScreen offers={offers} revocationList={revocationList}></PlacesListScreen>
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>

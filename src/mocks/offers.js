@@ -12,7 +12,7 @@ export default [
     Beautiful & luxurious apartment at great location.`,
     premium: true,
     type: `apartment`,
-    rating: 4.8,
+    rating: 3.1,
     bedroomsCount: 3,
     maxNumberGuests: 3,
     cost: 100,
@@ -26,11 +26,11 @@ export default [
   {
     id: 2,
     photos: [
+      `room.jpg`,
       `apartment-01.jpg`,
       `apartment-02.jpg`,
       `apartment-03.jpg`,
       `studio-01.jpg`,
-      `room.jpg`,
       `apartment-02.jpg`,
       `apartment-03.jpg`,
     ],
@@ -63,7 +63,7 @@ export default [
     Canal View Prinsengracht.`,
     premium: true,
     type: `house`,
-    rating: 3.8,
+    rating: 4.8,
     bedroomsCount: 4,
     maxNumberGuests: 4,
     cost: 120,
@@ -77,10 +77,10 @@ export default [
   {
     id: 4,
     photos: [
-      `apartment-01.jpg`,
-      `apartment-02.jpg`,
-      `apartment-03.jpg`,
       `studio-01.jpg`,
+      `apartment-03.jpg`,
+      `apartment-02.jpg`,
+      `apartment-01.jpg`,
     ],
     header: `Nice, cozy, warm big bed apartment.`,
     description: `Nice, cozy, warm big bed apartment. 
