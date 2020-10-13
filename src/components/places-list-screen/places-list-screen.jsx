@@ -2,14 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import OfferCardScreen from "../offer-card-screen/offer-card-screen";
 
-const PlacesListScreen = ({offers, revocationList}) => {
+const PlacesListScreen = ({offers}) => {
   return (
     <div className="cities__places-list places__list tabs__content">
       {offers.map((offer) =>
         <OfferCardScreen
           key={offer.id}
           offer={offer}
-          revocationList={revocationList.filter((element) => element.id === offer.id)}
         />
       )}
     </div>
@@ -33,19 +32,8 @@ PlacesListScreen.propTypes = {
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       super: PropTypes.bool.isRequired,
-    }).isRequired
-  })).isRequired,
-  revocationList: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    reviews: PropTypes.arrayOf(
-        PropTypes.shape({
-          avatar: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired,
-          rating: PropTypes.number.isRequired,
-          date: PropTypes.instanceOf(Date).isRequired,
-          reviewText: PropTypes.string.isRequired,
-        }).isRequired
-    ).isRequired
+    }).isRequired,
+    favorites: PropTypes.bool.isRequired,
   })).isRequired
 };
 

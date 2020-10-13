@@ -122,7 +122,8 @@ MainScreen.propTypes = {
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       super: PropTypes.bool.isRequired,
-    }).isRequired
+    }).isRequired,
+    favorites: PropTypes.bool.isRequired,
   })).isRequired,
   revocationList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,

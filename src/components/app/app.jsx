@@ -21,10 +21,17 @@ const App = ({placesCount, offers, revocationList}) => {
           <SignInScreen />
         </Route>
         <Route exact path="/favorites">
-          <FavoritesScreen />
+          <FavoritesScreen
+            offers={offers.filter((element) => element.favorites === true)}
+          />
         </Route>
-        <Route exact path="/offer/:id">
-          <RoomScreen />
+        <Route exact path="/offer/:id" render = {(props) => (
+          <RoomScreen
+            offers={offers}
+            revocationList={revocationList}
+            id={props.match.params.id}
+          />
+        )}>
         </Route>
       </Switch>
     </BrowserRouter>
@@ -49,7 +56,8 @@ App.propTypes = {
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       super: PropTypes.bool.isRequired,
-    }).isRequired
+    }).isRequired,
+    favorites: PropTypes.bool.isRequired,
   })).isRequired,
   revocationList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,

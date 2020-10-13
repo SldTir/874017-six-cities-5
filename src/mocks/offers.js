@@ -7,9 +7,7 @@ export default [
       `apartment-03.jpg`,
     ],
     header: `Beautiful & luxurious apartment at great location.`,
-    description: `Beautiful & luxurious apartment at great location. 
-    Beautiful & luxurious apartment at great location. 
-    Beautiful & luxurious apartment at great location.`,
+    description: [`Beautiful & luxurious apartment at great location. Beautiful & luxurious apartment at great location. Beautiful & luxurious apartment at great location.`],
     premium: true,
     type: `apartment`,
     rating: 3.1,
@@ -21,7 +19,8 @@ export default [
       avatar: `avatar-angelina.jpg`,
       name: `Angelina`,
       super: true,
-    }
+    },
+    favorites: true,
   },
   {
     id: 2,
@@ -35,9 +34,9 @@ export default [
       `apartment-03.jpg`,
     ],
     header: `Wood and stone place.`,
-    description: `Wood and stone place. 
+    description: [`Wood and stone place. 
     Wood and stone place. 
-    Wood and stone place.`,
+    Wood and stone place.`],
     premium: false,
     type: `room`,
     rating: 4.3,
@@ -49,7 +48,8 @@ export default [
       avatar: `avatar-max.jpg`,
       name: `Max`,
       super: false,
-    }
+    },
+    favorites: false,
   },
   {
     id: 3,
@@ -58,9 +58,7 @@ export default [
       `room.jpg`,
     ],
     header: `Canal View Prinsengracht.`,
-    description: `Canal View Prinsengracht. 
-    Canal View Prinsengracht. 
-    Canal View Prinsengracht.`,
+    description: [`Canal View Prinsengracht.`, `Canal View Prinsengracht. Canal View Prinsengracht.`, `Canal View Prinsengracht. Canal View Prinsengracht. Canal View Prinsengracht.`],
     premium: true,
     type: `house`,
     rating: 4.8,
@@ -71,8 +69,9 @@ export default [
     informationAboutHost: {
       avatar: `avatar-angelina.jpg`,
       name: `Angelina`,
-      super: false,
-    }
+      super: true,
+    },
+    favorites: true,
   },
   {
     id: 4,
@@ -83,9 +82,7 @@ export default [
       `apartment-01.jpg`,
     ],
     header: `Nice, cozy, warm big bed apartment.`,
-    description: `Nice, cozy, warm big bed apartment. 
-    Nice, cozy, warm big bed apartment. 
-    Nice, cozy, warm big bed apartment.`,
+    description: [`Nice, cozy, warm big bed apartment. Nice, cozy, warm big bed apartment.`, `Nice, cozy, warm big bed apartment. Nice, cozy, warm big bed apartment. Nice, cozy, warm big bed apartment.`],
     premium: false,
     type: `hotel`,
     rating: 2.2,
@@ -96,7 +93,8 @@ export default [
     informationAboutHost: {
       avatar: `avatar-max.jpg`,
       name: `Max`,
-      super: true,
-    }
+      super: false,
+    },
+    favorites: false,
   },
 ];

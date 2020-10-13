@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {TypeHousing} from "../../const.js";
-
-const returnsPercentage = (number) => Math.round(number) * 20;
+import {returnsPercentage, returnActiveButton} from "../../utils";
 
 const OfferCardScreen = ({offer}) => {
   return (
@@ -22,9 +21,9 @@ const OfferCardScreen = ({offer}) => {
             <b className="place-card__price-value">&euro;{offer.cost}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
-          <button className="place-card__bookmark-button button" type="button">
+          <button className={returnActiveButton(offer.favorites) + ` place-card__bookmark-button` + ` button`} type="button">
             <svg className="place-card__bookmark-icon" width="18" height="19">
-              <use xlinkHref="#icon-bookmark" />
+              <use xlinkHref="#icon-bookmark"></use>
             </svg>
             <span className="visually-hidden">To bookmarks</span>
           </button>
@@ -61,7 +60,8 @@ OfferCardScreen.propTypes = {
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       super: PropTypes.bool.isRequired,
-    }).isRequired
+    }).isRequired,
+    favorites: PropTypes.bool.isRequired,
   }).isRequired
 };
 
